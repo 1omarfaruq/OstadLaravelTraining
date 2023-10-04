@@ -1,9 +1,9 @@
 <?php 
 
 class Product {
-    private $id;
-    private $name;
-    private $price;
+    protected $id;
+    protected $name;
+    protected $price;
 
     public function __construct($id, $name, $price) {
         $this->id = $id;
@@ -16,13 +16,14 @@ class Product {
     }
 
     public function showDetails() {
-        echo "Product Details:\n";
-        echo "ID: {$this->id}\n";
-        echo "Name: {$this->name}\n";
-        echo "Price: {$this->getFormattedPrice()}\n";
+        echo "Details:\n";
+        echo "Product ID: {$this->id}\n";
+        echo "Product Name: {$this->name}\n";
+        echo "Product Price: {$this->getFormattedPrice()}\n";
     }
 }
 
-// Test the Product class
+// Test code for the Product class
 $product = new Product(1, 'T-shirt', 19.99);
+
 $product->showDetails();
